@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Potree Viewer</title>
+
+	<link rel="stylesheet" type="text/css" href="./build/potree/potree.css">
+	<link rel="stylesheet" type="text/css" href="./libs/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="./libs/openlayers3/ol.css">
+	<link rel="stylesheet" type="text/css" href="./libs/spectrum/spectrum.css">
+	<link rel="stylesheet" type="text/css" href="./libs/jstree/themes/mixed/style.css">
+	<style>
+		#full{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			height: 40px; 
+			width: 40px;
+			margin: 8px 8px;
+			background: none;
+			z-index: 1;
+			cursor: pointer;
+		}
+		#full_on{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			height: 40px; 
+			width: 40px;
+			margin: 8px 8px;
+			background: none;
+			z-index: 1;
+			cursor: pointer;
+		}
+		.hidden{
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+	<script src="./libs/jquery/jquery-3.1.1.min.js"></script>
+	<script src="./libs/spectrum/spectrum.js"></script>
+	<script src="./libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="./libs/three.js/build/three.min.js"></script>
+	<script src="./libs/three.js/extra/lines.js"></script>
+	<script src="./libs/other/BinaryHeap.js"></script>
+	<script src="./libs/tween/tween.min.js"></script>
+	<script src="./libs/d3/d3.js"></script>
+	<script src="./libs/proj4/proj4.js"></script>
+	<script src="./libs/openlayers3/ol.js"></script>
+	<script src="./libs/i18next/i18next.js"></script>
+	<script src="./libs/jstree/jstree.js"></script>
+	<script src="./build/potree/potree.js"></script>
+	<script src="./libs/plasio/js/laslaz.js"></script>
+	
+	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
+	<!-- INCLUDE SETTINGS HERE -->
+	
+	<div id="potree_container" class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
+		<div id="potree_render_area" style="background-image: url('./build/potree/resources/images/loading.jpg');"></div>
+		<div id="potree_sidebar_container"> </div>
+		<img  id="full"						src="./full.png" alt="full" onclick="fullscreen();">
+		<img  id="full_on" 	class="hidden"	src="./full_on.png" alt="full" onclick="closeFullscreen();">
+		<!--<img  id="full" style="height: 48px; width: 48px;" src="./full.png" alt="full" onclick="fullscreen();">-->
+
+	</div>
+	
+	<script>
+	
+		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+		
+		viewer.setEDLEnabled(true);
+		viewer.setFOV(60);
+		viewer.setPointBudget(1*1000*1000);
+		viewer.loadSettingsFromURL();
+		
+		viewer.setDescription("Point cloud courtesy of <a target='_blank' href='https://www.sigeom.ch/'>sigeom sa</a>");
+		
+		viewer.loadGUI(() => {
+			viewer.setLanguage('en');
+			$("#menu_tools").next().show();
+			$("#menu_clipping").next().show();
+			viewer.toggleSidebar();
+		});
+		//KellerGeoref.laz_converted/octree.bin/metadata.json
+		// Load and add point cloud to scene
+		//../pointclouds/vol_total/cloud.js
+		//C:\Arbeitsangelegenheiten\Praktika\Praktikum_DAI\Web_Viewer\potree\pointclouds\KellerGeoref.las_converted_1\pointclouds\pageName
+		Potree.loadPointCloud("./pointclouds/Keller_las/metadata.json", "sigeom.sa", e => {
+			let scene = viewer.scene;
+			let pointcloud = e.pointcloud;
+			
+			let material = pointcloud.material;
+			material.size = 1;
+			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+			material.shape = Potree.PointShape.SQUARE;
+			material.activeAttributeName = "rgba";
+			scene.addPointCloud(pointcloud);
+			
+			//scene.view.position.set(589974.341, 231698.397, 986.146);
+			//scene.view.lookAt(new THREE.Vector3(589851.587, 231428.213, 715.634));
+			viewer.fitToScreen();
+		});
+		var full	= document.getElementById("full");
+		var full_on = document.getElementById("full_on");
+		function fullscreen(){
+		/* Get the element you want displayed in fullscreen */ 
+			var viewer = document.getElementById("potree_container");
+
+			if (viewer.requestFullscreen) {
+				viewer.requestFullscreen();
+			} else if (viewer.webkitRequestFullscreen) { /* Safari */
+				viewer.webkitRequestFullscreen();
+			} else if (viewer.msRequestFullscreen) { /* IE11 */
+				viewer.msRequestFullscreen();
+			}
+			full.classList.toggle("hidden");
+			full_on.classList.toggle("hidden");
+		}
+		function closeFullscreen() {
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			} else if (document.webkitExitFullscreen) { /* Safari */
+				document.webkitExitFullscreen();
+			} else if (document.msExitFullscreen) { /* IE11 */
+				document.msExitFullscreen();
+			}
+			full.classList.toggle("hidden");
+			full_on.classList.toggle("hidden");
+		}
+	</script>
+  </body>
+</html>

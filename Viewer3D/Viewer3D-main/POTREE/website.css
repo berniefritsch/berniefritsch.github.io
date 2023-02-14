@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    /*font-family: Tahoma, Verdana, sans-serif;*/
+    /*font-style: italic;*/
+}
+body {
+    margin: 0;
+}
+/* Style the header */
+header {
+    border: none;
+    background-color: rgba(85, 114, 161, .9);
+    height: 50px;
+}
+.container{
+    height: 920px;
+    /*background-color: rgba(155, 114, 161, .9);*/
+    width: 100%;
+}
+.leftside{
+    float: left;
+    width: 65%;
+    height: 100%;
+    /*background-color: aqua;*/
+    padding: 50px 40px 0px 40px;
+}
+h1{
+    width: 100%;
+    font-size: 40px;
+    margin-top: 0px;
+}
+iframe{
+    width:100%;
+    height: 650px;
+    margin: 20px 0 30px 0;
+    padding-bottom: 0;
+}
+.citation{
+    width: 80%;
+    float: left;
+}
+a.download:link, a.download:visited {
+    background-color: rgba(85, 114, 161, .9);
+    width: 15%;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+}
+
+a.download:hover, a.download:active {
+    background-color: rgba(18, 50, 102, 0.9);
+}
+.rightside{
+    float: right;
+    width: 35%;
+    height: 100%;
+    border: 1px solid rgba(207, 207, 207, 0.9);
+    /*background-color: brown;*/
+}
+.select-bar{
+    width: 100%;
+    height: 50px;
+    background-color:rgba(85, 114, 161, .9);
+}
+.detailsbutton{
+    background-color:  rgb(206, 206, 206);
+    text-align: center;
+    font-size: 16px;
+    width: 50%;
+    height: 100%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    float: left;
+    border: none;
+}
+.relatedbutton{
+    text-align: center;
+    background-color: rgb(206, 206, 206);
+    font-size: 16px;
+    width: 50%;
+    height: 100%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    float: right;
+    border: none;
+}
+.contentbutton{
+    text-align: left;
+    background-color: rgb(243, 243, 243);
+    font-size: 16px;
+    width: 100%;
+    height: 40px;
+    margin: 6px 0 6px 0;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid rgb(134, 134, 134);
+    border-radius: 5px;
+}
+span{
+    float: right;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777;
+    border-radius: 10px;
+    content: attr(works);
+} 
+.detailsbutton:hover, .relatedbutton:hover,.contentbutton:hover{
+    background-color: rgba(18, 50, 102, 0.9);
+    color: white;
+
+}
+.active{
+    background-color: rgba(85, 114, 161, .9);
+    color: white;
+}
+.content{
+    overflow: auto;
+    width: 100%;
+    height: 870px;
+    padding: 20px 40px 0 40px;
+}
+.details-content{
+    width: 100%;
+    display: none;
+}
+.related-content{
+    width: 100%;
+    display: none;
+}
+.divContent{
+    border: 2px solid rgb(190, 190, 190);
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 6px;
+    margin:  0 0 6px 0;
+}
+h2{
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+}
+h3{
+    width: 100%;
+    font-size: 21px;
+    margin-bottom: 0;
+}
+p{
+    width: 100%;
+    font-size: 20px;
+    color: rgb(59, 59, 59);
+    margin: 6px 0px 6px 0px;
+}
+/* Style the footer */
+footer {
+    font-size: 12px;
+    height: 120px;
+    bottom: 0;
+    width: 100%;
+    background-color: #e2e2e2;
+}
+@media only screen and (orientation: portrait) {
+    
+}
+@media only screen and (orientation: landscape) {
+    
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px grey; 
+   
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(109, 109, 109, 0.3); 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(130, 130, 130, 0.9); 
+}

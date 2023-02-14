@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3D Viewer</title>
+	<meta name="description" content="prototyp"/>
+	<meta name="author" content="Manuel Schilling"/>
+	<meta name="msapplication-TileColor" content="#317EFB"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#317EFB"/>
+	<meta name="apple-mobile-web-app-title" content="3D Viewer"/>
+	<meta name="theme-color" content="#317EFB"/>
+    <link rel="manifest" href="start.json" type="text/json"/>
+    <link type="text/css" rel="stylesheet" href="website.css">
+</head>
+<script src="website.js" async></script>
+<body onload="OnInit();">
+    <header><img src="./bar.PNG" alt="bar"></header>
+    <div class="container">
+        <div class="leftside">
+            <h1 class=".objectname">3D model of trench 201, Ostia Antica 2011</h1>
+            <iframe id="viewer" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="./viewer.html" frameborder="0" title="Potree Viewer"></iframe>
+            <div class="citation"><p><b>Citation: </b>3D model of trench 201, Ostia antica, Max Mustermann, Ostia Forum Project, 2011, DOI: 10.12345/6789</p></div>          
+            <a class="download" href="./resources/models/TerraSigillataMesh.ply" download="./models/Feetply.nxs">downlaod</a>
+        </div>
+        <div class="rightside">
+            <div class="select-bar">
+                <button id="detailsbutton" class="detailsbutton" onclick="displayDetails(event);">Details</button>
+                <button id="relatedbutton" class="relatedbutton" onclick="displayRelated(event);">Verbunden</button>
+            </div>
+            <div class="content">
+                <div id="details-content" class="details-content"></div>
+                <div id="related-content" class="related-content"></div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

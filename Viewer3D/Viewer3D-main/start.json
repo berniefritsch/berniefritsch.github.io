@@ -1,0 +1,17 @@
+{
+    "short_name": "3D Viewer",
+    "name": "3D Viewer Prototype",
+    "description": "3D Viewer Prototype",
+    "start_url": "https://manuelschilling.github.io/beleg.html",
+    "scope": "https://manuelschilling.github.io/beleg.html",
+    "display": "standalone",
+    "theme_color": "#21f348",
+    "background_color": "#21eef3",
+    "orientation": "landscape",
+	"dir": "ltr",
+	"lang": "en-EN",
+ 	"related_application": [{
+	"platform": "play",
+	"url": "https://play.google.com/store/adges/details?id=cheeaun.hackerweb"
+}]
+}

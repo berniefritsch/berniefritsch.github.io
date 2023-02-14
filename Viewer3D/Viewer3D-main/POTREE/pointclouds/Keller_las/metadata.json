@@ -1,0 +1,104 @@
+{
+	"version": "2.0",
+	"name": "Keller",
+	"description": "",
+	"points": 551238,
+	"projection": "",
+	"hierarchy": {
+		"firstChunkSize": 5434, 
+		"stepSize": 4, 
+		"depth": 4
+	},
+	"offset": [42.761299133300781, 19.841999053955078, 91.541999816894531],
+	"scale": [9.9999999999999995e-08, 9.9999999999999995e-08, 9.9999999999999995e-08],
+	"spacing": 0.066995322704315186,
+	"boundingBox": {
+		"min": [42.761299133300781, 19.841999053955078, 91.541999816894531], 
+		"max": [51.336700439453125, 28.417400360107422, 100.11740112304688]
+	},
+	"encoding": "DEFAULT",
+	"attributes": [
+		{
+			"name": "position",
+			"description": "",
+			"size": 12,
+			"numElements": 3,
+			"elementSize": 4,
+			"type": "int32",
+			"min": [42.761299099999995, 19.841999099999999, 91.541999799999999],
+			"max": [51.258998899999995, 28.417400399999998, 93.942001300000001]
+		},{
+			"name": "intensity",
+			"description": "",
+			"size": 2,
+			"numElements": 1,
+			"elementSize": 2,
+			"type": "uint16",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "return number",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [1],
+			"max": [1]
+		},{
+			"name": "number of returns",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [1],
+			"max": [1]
+		},{
+			"name": "classification",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "scan angle rank",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "user data",
+			"description": "",
+			"size": 1,
+			"numElements": 1,
+			"elementSize": 1,
+			"type": "uint8",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "point source id",
+			"description": "",
+			"size": 2,
+			"numElements": 1,
+			"elementSize": 2,
+			"type": "uint16",
+			"min": [0],
+			"max": [0]
+		},{
+			"name": "rgb",
+			"description": "",
+			"size": 6,
+			"numElements": 3,
+			"elementSize": 2,
+			"type": "uint16",
+			"min": [1536, 3584, 3584],
+			"max": [65280, 65280, 65280]
+		}
+	]
+}
